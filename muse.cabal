@@ -1,0 +1,45 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.36.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           muse
+version:        0.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      Muse
+      Muse.ADSR
+      Muse.FFmpeg
+      Muse.Output
+      Muse.Raw
+  other-modules:
+      Paths_muse
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      base
+    , bytestring
+    , directory
+    , filepath
+    , process
+  default-language: Haskell2010
+
+executable muse-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_muse
+  hs-source-dirs:
+      ./
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base
+    , bytestring
+    , directory
+    , filepath
+    , muse
+    , process
+  default-language: Haskell2010
